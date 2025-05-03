@@ -41,7 +41,6 @@
             this.txtSoTiet = new System.Windows.Forms.TextBox();
             this.txtMaMH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnRandomMaNhom = new System.Windows.Forms.Button();
             this.txtMaNhom = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboB1 = new System.Windows.Forms.ComboBox();
@@ -196,17 +195,6 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Mã Nhóm:";
             // 
-            // btnRandomMaNhom
-            // 
-            this.btnRandomMaNhom.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRandomMaNhom.Location = new System.Drawing.Point(831, 278);
-            this.btnRandomMaNhom.Name = "btnRandomMaNhom";
-            this.btnRandomMaNhom.Size = new System.Drawing.Size(208, 45);
-            this.btnRandomMaNhom.TabIndex = 5;
-            this.btnRandomMaNhom.Text = "Ngẫu nhiên mã nhóm";
-            this.btnRandomMaNhom.UseVisualStyleBackColor = true;
-            this.btnRandomMaNhom.Click += new System.EventHandler(this.btnRandomMaNhom_Click);
-            // 
             // txtMaNhom
             // 
             this.txtMaNhom.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,9 +208,9 @@
             // 
             this.groupBox1.Controls.Add(this.comboB1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(545, 132);
+            this.groupBox1.Location = new System.Drawing.Point(654, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(267, 60);
+            this.groupBox1.Size = new System.Drawing.Size(431, 78);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buổi 1";
@@ -231,10 +219,11 @@
             // 
             this.comboB1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboB1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboB1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboB1.FormattingEnabled = true;
             this.comboB1.Location = new System.Drawing.Point(7, 23);
             this.comboB1.Name = "comboB1";
-            this.comboB1.Size = new System.Drawing.Size(254, 23);
+            this.comboB1.Size = new System.Drawing.Size(418, 30);
             this.comboB1.TabIndex = 0;
             this.comboB1.SelectedIndexChanged += new System.EventHandler(this.comboB1_SelectedIndexChanged);
             // 
@@ -242,9 +231,9 @@
             // 
             this.groupBox2.Controls.Add(this.comboB2);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(818, 132);
+            this.groupBox2.Location = new System.Drawing.Point(654, 104);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 60);
+            this.groupBox2.Size = new System.Drawing.Size(431, 78);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buổi 2";
@@ -253,10 +242,11 @@
             // 
             this.comboB2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboB2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboB2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboB2.FormattingEnabled = true;
             this.comboB2.Location = new System.Drawing.Point(7, 23);
             this.comboB2.Name = "comboB2";
-            this.comboB2.Size = new System.Drawing.Size(254, 23);
+            this.comboB2.Size = new System.Drawing.Size(418, 30);
             this.comboB2.TabIndex = 0;
             this.comboB2.SelectedIndexChanged += new System.EventHandler(this.comboB2_SelectedIndexChanged);
             // 
@@ -264,9 +254,9 @@
             // 
             this.groupBox3.Controls.Add(this.comboB3);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(675, 198);
+            this.groupBox3.Location = new System.Drawing.Point(654, 184);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(267, 60);
+            this.groupBox3.Size = new System.Drawing.Size(431, 78);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Buổi 3";
@@ -275,10 +265,11 @@
             // 
             this.comboB3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboB3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboB3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboB3.FormattingEnabled = true;
             this.comboB3.Location = new System.Drawing.Point(7, 23);
             this.comboB3.Name = "comboB3";
-            this.comboB3.Size = new System.Drawing.Size(254, 23);
+            this.comboB3.Size = new System.Drawing.Size(418, 30);
             this.comboB3.TabIndex = 0;
             this.comboB3.SelectedIndexChanged += new System.EventHandler(this.comboB3_SelectedIndexChanged);
             // 
@@ -324,7 +315,7 @@
             this.groupBox4.Controls.Add(this.radioButton3);
             this.groupBox4.Controls.Add(this.radioButton2);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(697, 12);
+            this.groupBox4.Location = new System.Drawing.Point(514, 92);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(134, 100);
             this.groupBox4.TabIndex = 10;
@@ -334,9 +325,9 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(578, 278);
+            this.btnLuu.Location = new System.Drawing.Point(492, 277);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(208, 45);
+            this.btnLuu.Size = new System.Drawing.Size(593, 48);
             this.btnLuu.TabIndex = 11;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -353,7 +344,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtMaNhom);
-            this.Controls.Add(this.btnRandomMaNhom);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMaMH);
             this.Controls.Add(this.txtSoTiet);
@@ -397,7 +387,6 @@
         private System.Windows.Forms.TextBox txtSoTiet;
         private System.Windows.Forms.TextBox txtMaMH;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnRandomMaNhom;
         private System.Windows.Forms.TextBox txtMaNhom;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboB1;

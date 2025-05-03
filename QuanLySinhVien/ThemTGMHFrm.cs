@@ -76,9 +76,9 @@ namespace QuanLySinhVien
                     radioButton3.Enabled = false;
                 } else if(Int32.Parse(txtSoTinChi.Text) == 1)
                 {
-                    radioButton3.Enabled = false;
                     radioButton1.Enabled = true;
                     radioButton2.Enabled = false;
+                    radioButton3.Enabled = false;
                 }
 
                 UnEnableControl(new List<Control> { txtMaMH, txtMaNhom, txtSoTiet, txtSoTinChi, txtHoTenGV, txtMH });
@@ -94,10 +94,47 @@ namespace QuanLySinhVien
         {
             if (radioButton1.Checked)
             {
-                Debug.WriteLine("RadioButton1 is checked");
+                comboB1.Items.Clear();
+                comboB2.Items.Clear();
+                comboB3.Items.Clear();
+                //Debug.WriteLine("RadioButton1 is checked");
                 groupBox1.Enabled = true;
                 groupBox2.Enabled = false;
                 groupBox3.Enabled = false;
+                if(Int32.Parse(txtSoTinChi.Text) == 3)
+                {
+                    List<string> lichHocTC3B11T = new List<string>();
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        for (int j = 1; j <= 11; j++)
+                        {
+                            if (j == 5)
+                                continue;
+
+                            string tietHoc = $"Thứ {i} - Tiết bắt đầu: {j} - Tiết kết thúc: {j + 2};";
+                            lichHocTC3B11T.Add(tietHoc);
+                        }
+                    }
+
+                    comboB1.Items.AddRange(lichHocTC3B11T.ToArray());
+                }
+                else if (Int32.Parse(txtSoTinChi.Text) == 1 || Int32.Parse(txtSoTinChi.Text) == 2)
+                {
+                    List<string> lichHocTC12B11T = new List<string>();
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        for (int j = 1; j <= 12; j++)
+                        {
+                            if (j == 5)
+                                continue;
+
+                            string tietHoc = $"Thứ {i} - Tiết bắt đầu: {j} - Tiết kết thúc: {j + 1};";
+                            lichHocTC12B11T.Add(tietHoc);
+                        }
+                    }
+
+                    comboB1.Items.AddRange(lichHocTC12B11T.ToArray());
+                } 
             }
         }
 
@@ -105,10 +142,49 @@ namespace QuanLySinhVien
         {
             if (radioButton2.Checked)
             {
-                Debug.WriteLine("RadioButton2 is checked");
+                comboB1.Items.Clear();
+                comboB2.Items.Clear();
+                comboB3.Items.Clear();
+                //Debug.WriteLine("RadioButton2 is checked");
                 groupBox1.Enabled = true;
                 groupBox2.Enabled = true;
                 groupBox3.Enabled = false;
+
+                if(Int32.Parse(txtSoTinChi.Text) == 3)
+                {
+                    List<string> lichHocTC3B21T = new List<string>();
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        for (int j = 1; j <= 12; j++)
+                        {
+                            if (j == 4 || j == 5)
+                                continue;
+                            string tietHoc = $"Thứ {i} - Tiết bắt đầu: {j} - Tiết kết thúc: {j + 1};";
+
+                            lichHocTC3B21T.Add(tietHoc);
+                        }
+                    }
+
+                    comboB1.Items.AddRange(lichHocTC3B21T.ToArray());
+                    comboB2.Items.AddRange(lichHocTC3B21T.ToArray());
+                } else if(Int32.Parse(txtSoTinChi.Text) == 2 || Int32.Parse(txtSoTinChi.Text) == 1)
+                {
+                    List<string> lichHocTC2B21T = new List<string>();
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        for (int j = 1; j <= 11; j++)
+                        {
+                            if (j == 5)
+                                continue;
+
+                            string tietHoc = $"Thứ {i} - Tiết bắt đầu: {j} - Tiết kết thúc: {j + 2};";
+                            lichHocTC2B21T.Add(tietHoc);
+                        }
+                    }
+
+                    comboB1.Items.AddRange(lichHocTC2B21T.ToArray());
+                    comboB2.Items.AddRange(lichHocTC2B21T.ToArray());
+                }
             }
         }
 
@@ -116,12 +192,15 @@ namespace QuanLySinhVien
         {
             if (radioButton3.Checked)
             {
-                Debug.WriteLine("RadioButton3 is checked");
+                comboB1.Items.Clear();
+                comboB2.Items.Clear();
+                comboB3.Items.Clear();
+                //Debug.WriteLine("RadioButton3 is checked");
                 groupBox1.Enabled = true;
                 groupBox2.Enabled = true;
                 groupBox3.Enabled = true;
 
-                if(txtSoTinChi.Text == "4")
+                if(Int32.Parse(txtSoTinChi.Text) == 4)
                 {
                     List<string> lichHocTC4B31T = new List<string>();
                     for (int i = 2; i <= 7; i++)
@@ -179,26 +258,34 @@ namespace QuanLySinhVien
             comboB3.Items.Clear();
         }
 
-        private void btnRandomMaNhom_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Nút lưu dữ liệu
         private void button1_Click(object sender, EventArgs e)
         {
             string selectedItem1 = comboB1.SelectedItem?.ToString();
             string selectedItem2 = comboB2.SelectedItem?.ToString();
             string selectedItem3 = comboB3.SelectedItem?.ToString();
+            string lichHoc = "";
             if (Int32.Parse(txtSoTinChi.Text) >= 4 && selectedItem1 != null && selectedItem2 != null && selectedItem3 != null)
             {
-                Debug.WriteLine("Lưu dữ liệu với 3 thời gian học {0}; {1}; {2}", selectedItem1, selectedItem3, selectedItem2);
+                lichHoc = $"{selectedItem1} {selectedItem2} {selectedItem3}";
+                //Debug.WriteLine(lichHoc);
+                //Debug.WriteLine("Lưu dữ liệu với 3 thời gian học {0}; {1}; {2}", selectedItem1, selectedItem3, selectedItem2);
 
             } else if ((Int32.Parse(txtSoTinChi.Text) == 3 || Int32.Parse(txtSoTinChi.Text) == 2) && selectedItem1 != null && selectedItem2 != null) {
-            
-            } else
+                lichHoc = $"{selectedItem1} {selectedItem2}";
+            } else if (Int32.Parse(txtSoTinChi.Text) == 1 && selectedItem1 != null)
+            {
+                lichHoc = $"{selectedItem1}";
+            }
+            else
             {
                 MessageBox.Show("Vui lòng chọn thời gian học cho môn học này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if(lichHoc != "")
+            {
+                string query = $@"update MonHoc set ThoiGianHoc = N'{lichHoc}' where MaMH = '{txtMaMH.Text}'";
+                DataProvider.LoadCSDL(query);
             }
         }
 
