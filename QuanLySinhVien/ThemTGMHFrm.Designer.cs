@@ -53,6 +53,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -198,12 +199,13 @@
             // btnRandomMaNhom
             // 
             this.btnRandomMaNhom.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRandomMaNhom.Location = new System.Drawing.Point(697, 282);
+            this.btnRandomMaNhom.Location = new System.Drawing.Point(831, 278);
             this.btnRandomMaNhom.Name = "btnRandomMaNhom";
             this.btnRandomMaNhom.Size = new System.Drawing.Size(208, 45);
             this.btnRandomMaNhom.TabIndex = 5;
             this.btnRandomMaNhom.Text = "Ngẫu nhiên mã nhóm";
             this.btnRandomMaNhom.UseVisualStyleBackColor = true;
+            this.btnRandomMaNhom.Click += new System.EventHandler(this.btnRandomMaNhom_Click);
             // 
             // txtMaNhom
             // 
@@ -227,11 +229,14 @@
             // 
             // comboB1
             // 
+            this.comboB1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboB1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboB1.FormattingEnabled = true;
             this.comboB1.Location = new System.Drawing.Point(7, 23);
             this.comboB1.Name = "comboB1";
             this.comboB1.Size = new System.Drawing.Size(254, 23);
             this.comboB1.TabIndex = 0;
+            this.comboB1.SelectedIndexChanged += new System.EventHandler(this.comboB1_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -246,11 +251,14 @@
             // 
             // comboB2
             // 
+            this.comboB2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboB2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboB2.FormattingEnabled = true;
             this.comboB2.Location = new System.Drawing.Point(7, 23);
             this.comboB2.Name = "comboB2";
             this.comboB2.Size = new System.Drawing.Size(254, 23);
             this.comboB2.TabIndex = 0;
+            this.comboB2.SelectedIndexChanged += new System.EventHandler(this.comboB2_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -265,11 +273,14 @@
             // 
             // comboB3
             // 
+            this.comboB3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboB3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboB3.FormattingEnabled = true;
             this.comboB3.Location = new System.Drawing.Point(7, 23);
             this.comboB3.Name = "comboB3";
             this.comboB3.Size = new System.Drawing.Size(254, 23);
             this.comboB3.TabIndex = 0;
+            this.comboB3.SelectedIndexChanged += new System.EventHandler(this.comboB3_SelectedIndexChanged);
             // 
             // radioButton1
             // 
@@ -321,11 +332,22 @@
             this.groupBox4.Text = "Số buổi / Tuần";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(578, 278);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(208, 45);
+            this.btnLuu.TabIndex = 11;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ThemTGMHFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1106, 675);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -348,6 +370,7 @@
             this.Name = "ThemTGMHFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemTGMHFrm";
+            this.Load += new System.EventHandler(this.ThemTGMHFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -386,5 +409,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

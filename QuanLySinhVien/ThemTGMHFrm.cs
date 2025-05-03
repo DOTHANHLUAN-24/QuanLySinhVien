@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLySinhVien
 {
     public partial class ThemTGMHFrm : Form
     {
         DataTable dt = new DataTable();
-        public string soBuoi;
 
         public ThemTGMHFrm()
         {
@@ -48,7 +48,7 @@ namespace QuanLySinhVien
         {
             //Debug.WriteLine(dtgvMH.SelectedRows.Count.ToString() + " dòng được chọn");
 
-            if(dtgvMH.SelectedRows.Count > 0)
+            if (dtgvMH.SelectedRows.Count > 0)
             {
                 //Lấy dòng đầu tiên khi nhấn vào
                 var row = dtgvMH.SelectedRows[0];
@@ -60,6 +60,26 @@ namespace QuanLySinhVien
                 txtSoTinChi.Text = row.Cells["SoTinChi"].Value.ToString();
                 txtSoTiet.Text = row.Cells["SoTiet"].Value.ToString();
                 txtHoTenGV.Text = row.Cells["HoTenGiangVien"].Value.ToString();
+                txtMaNhom.Text = row.Cells["Nhom"].Value.ToString();
+
+                groupBox4.Enabled = true;
+
+                if (Int32.Parse(txtSoTinChi.Text) >= 4)
+                {
+                    radioButton1.Enabled = false;
+                    radioButton2.Enabled = false;
+                    radioButton3.Enabled = true;
+                } else if (Int32.Parse(txtSoTinChi.Text) == 3 || Int32.Parse(txtSoTinChi.Text) == 2)
+                {
+                    radioButton1.Enabled = true;
+                    radioButton2.Enabled = true;
+                    radioButton3.Enabled = false;
+                } else if(Int32.Parse(txtSoTinChi.Text) == 1)
+                {
+                    radioButton3.Enabled = false;
+                    radioButton1.Enabled = true;
+                    radioButton2.Enabled = false;
+                }
 
                 UnEnableControl(new List<Control> { txtMaMH, txtMaNhom, txtSoTiet, txtSoTinChi, txtHoTenGV, txtMH });
             }
@@ -72,18 +92,55 @@ namespace QuanLySinhVien
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine("RadioButton1 is checked");
+            if (radioButton1.Checked)
+            {
+                Debug.WriteLine("RadioButton1 is checked");
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = false;
+                groupBox3.Enabled = false;
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine("RadioButton2 is checked");
-
+            if (radioButton2.Checked)
+            {
+                Debug.WriteLine("RadioButton2 is checked");
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
+                groupBox3.Enabled = false;
+            }
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine("RadioButton3 is checked");
+            if (radioButton3.Checked)
+            {
+                Debug.WriteLine("RadioButton3 is checked");
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
+                groupBox3.Enabled = true;
+
+                if(txtSoTinChi.Text == "4")
+                {
+                    List<string> lichHocTC4B31T = new List<string>();
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        for (int j = 1; j <= 11; j++)
+                        {
+                            if (j == 5)
+                                continue;
+
+                            string tietHoc = $"Thứ {i} - Tiết bắt đầu: {j} - Tiết kết thúc: {j + 2};";
+                            lichHocTC4B31T.Add(tietHoc);
+                        }
+                    }
+
+                    comboB1.Items.AddRange(lichHocTC4B31T.ToArray());
+                    comboB2.Items.AddRange(lichHocTC4B31T.ToArray());
+                    comboB3.Items.AddRange(lichHocTC4B31T.ToArray());
+                }
+            }
         }
 
         private void EnableControl(List<Control> controls)
@@ -108,6 +165,111 @@ namespace QuanLySinhVien
             {
                 control.Text = string.Empty;
             }
+        }
+
+        private void ThemTGMHFrm_Load(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
+            groupBox3.Enabled = false;
+            groupBox4.Enabled = false;
+
+            comboB1.Items.Clear();
+            comboB2.Items.Clear();
+            comboB3.Items.Clear();
+        }
+
+        private void btnRandomMaNhom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Nút lưu dữ liệu
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string selectedItem1 = comboB1.SelectedItem?.ToString();
+            string selectedItem2 = comboB2.SelectedItem?.ToString();
+            string selectedItem3 = comboB3.SelectedItem?.ToString();
+            if (Int32.Parse(txtSoTinChi.Text) >= 4 && selectedItem1 != null && selectedItem2 != null && selectedItem3 != null)
+            {
+                Debug.WriteLine("Lưu dữ liệu với 3 thời gian học {0}; {1}; {2}", selectedItem1, selectedItem3, selectedItem2);
+
+            } else if ((Int32.Parse(txtSoTinChi.Text) == 3 || Int32.Parse(txtSoTinChi.Text) == 2) && selectedItem1 != null && selectedItem2 != null) {
+            
+            } else
+            {
+                MessageBox.Show("Vui lòng chọn thời gian học cho môn học này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void comboB1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = comboB1.SelectedItem.ToString();
+            
+            var itemsToRemove = danhSachLoaiBo(selectedItem);
+
+            // Xóa các item cùng ngày (trừ cái đã chọn)
+            foreach (var item in itemsToRemove)
+            {
+                comboB2.Items.Remove(item);
+                comboB3.Items.Remove(item);
+            }
+
+            comboB2.Items.Remove(selectedItem);
+            comboB3.Items.Remove(selectedItem);
+        }
+
+        private void comboB2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = comboB2.SelectedItem.ToString();
+
+            var itemsToRemove = danhSachLoaiBo(selectedItem);
+
+            foreach (var item in itemsToRemove)
+            {
+                comboB1.Items.Remove(item);
+                comboB3.Items.Remove(item);
+            }
+
+
+            comboB1.Items.Remove(selectedItem);
+            comboB3.Items.Remove(selectedItem);
+        }
+
+        private void comboB3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = comboB3.SelectedItem.ToString();
+
+            var itemsToRemove = danhSachLoaiBo(selectedItem);
+
+            foreach (var item in itemsToRemove)
+            {
+                comboB2.Items.Remove(item);
+                comboB1.Items.Remove(item);
+            }
+
+
+            comboB2.Items.Remove(selectedItem);
+            comboB1.Items.Remove(selectedItem);
+        }
+
+        private List<object> danhSachLoaiBo(string selectedItem)
+        {
+            // Tách để lấy phần "Thứ x"
+            string ngay = selectedItem.Split('-')[0].Trim(); // => "Thứ 2"
+
+            // Tìm tất cả item cần loại bỏ
+            List<object> itemsToRemove = new List<object>();
+            foreach (var item in comboB1.Items)
+            {
+                string value = item.ToString();
+                if (value.StartsWith(ngay) && value != selectedItem)
+                {
+                    itemsToRemove.Add(item);
+                }
+            }
+
+            return itemsToRemove;
         }
     }
 }
