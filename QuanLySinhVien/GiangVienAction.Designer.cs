@@ -147,7 +147,7 @@
             this.txtHoTen.BackColor = System.Drawing.SystemColors.Control;
             this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(250, 96);
+            this.txtHoTen.Location = new System.Drawing.Point(262, 103);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(679, 23);
             this.txtHoTen.TabIndex = 3;
@@ -157,7 +157,7 @@
             this.txtNgaySinh.BackColor = System.Drawing.SystemColors.Control;
             this.txtNgaySinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgaySinh.Location = new System.Drawing.Point(250, 124);
+            this.txtNgaySinh.Location = new System.Drawing.Point(262, 131);
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.Size = new System.Drawing.Size(679, 23);
             this.txtNgaySinh.TabIndex = 3;
@@ -167,7 +167,7 @@
             this.txtCapBac.BackColor = System.Drawing.SystemColors.Control;
             this.txtCapBac.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCapBac.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapBac.Location = new System.Drawing.Point(250, 152);
+            this.txtCapBac.Location = new System.Drawing.Point(262, 159);
             this.txtCapBac.Name = "txtCapBac";
             this.txtCapBac.Size = new System.Drawing.Size(679, 23);
             this.txtCapBac.TabIndex = 3;
@@ -177,7 +177,7 @@
             this.txtThoiGianVao.BackColor = System.Drawing.SystemColors.Control;
             this.txtThoiGianVao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtThoiGianVao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThoiGianVao.Location = new System.Drawing.Point(250, 180);
+            this.txtThoiGianVao.Location = new System.Drawing.Point(262, 187);
             this.txtThoiGianVao.Name = "txtThoiGianVao";
             this.txtThoiGianVao.Size = new System.Drawing.Size(679, 23);
             this.txtThoiGianVao.TabIndex = 3;
@@ -187,7 +187,7 @@
             this.txtMaSoGiangVien.BackColor = System.Drawing.SystemColors.Control;
             this.txtMaSoGiangVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaSoGiangVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSoGiangVien.Location = new System.Drawing.Point(250, 208);
+            this.txtMaSoGiangVien.Location = new System.Drawing.Point(262, 215);
             this.txtMaSoGiangVien.Name = "txtMaSoGiangVien";
             this.txtMaSoGiangVien.Size = new System.Drawing.Size(679, 23);
             this.txtMaSoGiangVien.TabIndex = 3;
@@ -197,7 +197,7 @@
             this.txtMoTa.BackColor = System.Drawing.SystemColors.Control;
             this.txtMoTa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoTa.Location = new System.Drawing.Point(250, 320);
+            this.txtMoTa.Location = new System.Drawing.Point(262, 327);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(679, 110);
@@ -208,7 +208,7 @@
             this.txtChucVu.BackColor = System.Drawing.SystemColors.Control;
             this.txtChucVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChucVu.Location = new System.Drawing.Point(250, 264);
+            this.txtChucVu.Location = new System.Drawing.Point(262, 271);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(679, 23);
             this.txtChucVu.TabIndex = 3;
@@ -218,7 +218,7 @@
             this.txtMonHocGiangDay.BackColor = System.Drawing.SystemColors.Control;
             this.txtMonHocGiangDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMonHocGiangDay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonHocGiangDay.Location = new System.Drawing.Point(250, 236);
+            this.txtMonHocGiangDay.Location = new System.Drawing.Point(262, 243);
             this.txtMonHocGiangDay.Name = "txtMonHocGiangDay";
             this.txtMonHocGiangDay.Size = new System.Drawing.Size(679, 23);
             this.txtMonHocGiangDay.TabIndex = 3;
@@ -238,7 +238,7 @@
             this.txtGioiTinh.BackColor = System.Drawing.SystemColors.Control;
             this.txtGioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGioiTinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.Location = new System.Drawing.Point(250, 292);
+            this.txtGioiTinh.Location = new System.Drawing.Point(262, 299);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(679, 23);
             this.txtGioiTinh.TabIndex = 3;
@@ -266,6 +266,7 @@
             this.btnXemDiemTheoGV.TabIndex = 5;
             this.btnXemDiemTheoGV.Text = "Xem điểm";
             this.btnXemDiemTheoGV.UseVisualStyleBackColor = true;
+            this.btnXemDiemTheoGV.Click += new System.EventHandler(this.btnXemDiemTheoGV_Click);
             // 
             // GiangVienAction
             // 

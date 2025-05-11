@@ -36,5 +36,12 @@ namespace QuanLySinhVien
             this.Hide();
             frm.ShowDialog();
         }
+
+        private void btnSuaSinhVien_Click(object sender, EventArgs e)
+        {
+            SuaTTSVFrm f = new SuaTTSVFrm();
+            this.Hide();
+            f.ShowDialog();
+        }
     }
 }

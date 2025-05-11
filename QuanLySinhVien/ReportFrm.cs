@@ -16,6 +16,7 @@ namespace QuanLySinhVien
     {
         private string _option;
         private long _maSo;
+        private string _hoTen;
 
         public ReportFrm(string option)
         {
@@ -28,6 +29,13 @@ namespace QuanLySinhVien
             InitializeComponent();
             _option = option;
             _maSo = maSo;
+        }
+
+        public ReportFrm(string option, string hoTen)
+        {
+            InitializeComponent();
+            _option = option;
+            _hoTen = hoTen;
         }
 
         private void ReportFrm_Load(object sender, EventArgs e)
@@ -212,6 +220,42 @@ namespace QuanLySinhVien
                     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
                 }
                 catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if(_option == "Xem điểm bên giảng viên")
+            {
+                try
+                {
+                    reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLySinhVien.ReportDiemTheoGV.rdlc";
+                    string query1 = $@"select * from SinhVien sv join KetQua kq on sv.MaSV = kq.MaSV join MonHoc mh on kq.Nhom = mh.Nhom where mh.HoTenGiangVien = N'{_hoTen}'";
+                    string query2 = $@"select * from MonHoc mh where mh.HoTenGiangVien = N'{_hoTen}'";
+                    string query3 = $@"select * from KetQua kq join MonHoc mh on kq.Nhom = mh.Nhom where mh.HoTenGiangVien = N'{_hoTen}'";
+
+                    var reportDataSource1 = new ReportDataSource()
+                    {
+                        Name = "dbSV",
+                        Value = DataProvider.LoadCSDL(query1)
+                    };
+
+                    var reportDataSource2 = new ReportDataSource()
+                    {
+                        Name = "dbMH",
+                        Value = DataProvider.LoadCSDL(query2)
+                    };
+
+                    var reportDataSource3 = new ReportDataSource()
+                    {
+                        Name = "db_KetQua",
+                        Value = DataProvider.LoadCSDL(query3)
+                    };
+
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+
+                } catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

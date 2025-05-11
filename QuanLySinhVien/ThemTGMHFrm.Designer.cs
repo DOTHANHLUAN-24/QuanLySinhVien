@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemTGMHFrm));
             this.dtgvMH = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -357,9 +358,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvMH);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThemTGMHFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThemTGMHFrm";
+            this.Text = "Thêm thời gian môn học";
             this.Load += new System.EventHandler(this.ThemTGMHFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMH)).EndInit();
             this.groupBox1.ResumeLayout(false);

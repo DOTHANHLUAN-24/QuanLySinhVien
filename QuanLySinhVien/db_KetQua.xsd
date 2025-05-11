@@ -33,7 +33,7 @@ SELECT MaSV, MaMH, Diem FROM KetQua WHERE (MaMH = @MaMH) AND (MaSV = @MaSV)</Com
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MaSV, MaMH, Diem FROM dbo.KetQua</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -67,21 +67,21 @@ SELECT MaSV, MaMH, Diem FROM KetQua WHERE (MaMH = @MaMH) AND (MaSV = @MaSV)</Com
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="db_KetQua" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="db_KetQua" msprop:Generator_DataSetName="db_KetQua">
+  <xs:element name="db_KetQua" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="db_KetQua" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="db_KetQua">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="KetQua" msprop:Generator_RowEvHandlerName="KetQuaRowChangeEventHandler" msprop:Generator_RowDeletedName="KetQuaRowDeleted" msprop:Generator_RowDeletingName="KetQuaRowDeleting" msprop:Generator_RowEvArgName="KetQuaRowChangeEvent" msprop:Generator_TablePropName="KetQua" msprop:Generator_RowChangedName="KetQuaRowChanged" msprop:Generator_RowChangingName="KetQuaRowChanging" msprop:Generator_TableClassName="KetQuaDataTable" msprop:Generator_RowClassName="KetQuaRow" msprop:Generator_TableVarName="tableKetQua" msprop:Generator_UserTableName="KetQua">
+        <xs:element name="KetQua" msprop:Generator_RowClassName="KetQuaRow" msprop:Generator_RowEvHandlerName="KetQuaRowChangeEventHandler" msprop:Generator_RowDeletedName="KetQuaRowDeleted" msprop:Generator_RowDeletingName="KetQuaRowDeleting" msprop:Generator_RowEvArgName="KetQuaRowChangeEvent" msprop:Generator_TablePropName="KetQua" msprop:Generator_RowChangedName="KetQuaRowChanged" msprop:Generator_UserTableName="KetQua" msprop:Generator_RowChangingName="KetQuaRowChanging" msprop:Generator_TableClassName="KetQuaDataTable" msprop:Generator_TableVarName="tableKetQua">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaSV" msprop:Generator_ColumnPropNameInRow="MaSV" msprop:Generator_ColumnPropNameInTable="MaSVColumn" msprop:Generator_ColumnVarNameInTable="columnMaSV" msprop:Generator_UserColumnName="MaSV" type="xs:long" />
-              <xs:element name="MaMH" msprop:Generator_ColumnPropNameInRow="MaMH" msprop:Generator_ColumnPropNameInTable="MaMHColumn" msprop:Generator_ColumnVarNameInTable="columnMaMH" msprop:Generator_UserColumnName="MaMH">
+              <xs:element name="MaSV" msprop:Generator_UserColumnName="MaSV" msprop:Generator_ColumnPropNameInTable="MaSVColumn" msprop:Generator_ColumnPropNameInRow="MaSV" msprop:Generator_ColumnVarNameInTable="columnMaSV" type="xs:long" />
+              <xs:element name="MaMH" msprop:Generator_UserColumnName="MaMH" msprop:Generator_ColumnPropNameInTable="MaMHColumn" msprop:Generator_ColumnPropNameInRow="MaMH" msprop:Generator_ColumnVarNameInTable="columnMaMH">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Diem" msprop:Generator_ColumnPropNameInRow="Diem" msprop:Generator_ColumnPropNameInTable="DiemColumn" msprop:Generator_ColumnVarNameInTable="columnDiem" msprop:Generator_UserColumnName="Diem" type="xs:double" minOccurs="0" />
+              <xs:element name="Diem" msprop:Generator_UserColumnName="Diem" msprop:Generator_ColumnPropNameInTable="DiemColumn" msprop:Generator_ColumnPropNameInRow="Diem" msprop:Generator_ColumnVarNameInTable="columnDiem" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

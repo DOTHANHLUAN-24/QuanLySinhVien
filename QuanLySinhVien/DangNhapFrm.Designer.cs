@@ -60,7 +60,6 @@
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(348, 34);
             this.txtTenDangNhap.TabIndex = 2;
-            this.txtTenDangNhap.Text = "quantrivien";
             // 
             // txtMatKhau
             // 
@@ -68,7 +67,6 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(348, 34);
             this.txtMatKhau.TabIndex = 2;
-            this.txtMatKhau.Text = "qtv2408";
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
             // btnDangNhap

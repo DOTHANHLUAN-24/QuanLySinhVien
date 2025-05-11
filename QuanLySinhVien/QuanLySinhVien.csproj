@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BT_Demo_QuanLySinhVienDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BT_Demo_QuanLySinhVienDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller_AdminFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +131,7 @@
     <Compile Include="AdminActionFrm.Designer.cs">
       <DependentUpon>AdminActionFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KetQua.cs" />
     <Compile Include="MonHoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +149,12 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="SuaTTSVFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaTTSVFrm.Designer.cs">
+      <DependentUpon>SuaTTSVFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemMoiGiangVienFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +203,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportDiemTheoGV.rdlc" />
+    <EmbeddedResource Include="SuaTTSVFrm.resx">
+      <DependentUpon>SuaTTSVFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemSinhVienFrm.resx">
       <DependentUpon>ThemSinhVienFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,7 +216,6 @@
     <EmbeddedResource Include="ThoiKhoaBieuSVFrm.resx">
       <DependentUpon>ThoiKhoaBieuSVFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XemDiemTheoGV.rdlc" />
     <EmbeddedResource Include="ReportDiemTheoMon.rdlc" />
     <EmbeddedResource Include="ReportDiemTheoSV.rdlc" />
     <EmbeddedResource Include="ReportGiangVienTheoSV.rdlc" />
@@ -218,6 +233,17 @@
       <DependentUpon>ThemMoiGiangVienFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="BT_Demo_QuanLySinhVienDataSet.xsc">
+      <DependentUpon>BT_Demo_QuanLySinhVienDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BT_Demo_QuanLySinhVienDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BT_Demo_QuanLySinhVienDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BT_Demo_QuanLySinhVienDataSet.xss">
+      <DependentUpon>BT_Demo_QuanLySinhVienDataSet.xsd</DependentUpon>
+    </None>
     <None Include="db_GiangVien.xsc">
       <DependentUpon>db_GiangVien.xsd</DependentUpon>
     </None>

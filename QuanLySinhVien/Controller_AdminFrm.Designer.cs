@@ -45,7 +45,7 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(1089, 95);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(1054, 95);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Trang điều hướng";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,16 +84,17 @@
             // 
             this.btnSuaSinhVien.Location = new System.Drawing.Point(585, 139);
             this.btnSuaSinhVien.Name = "btnSuaSinhVien";
-            this.btnSuaSinhVien.Size = new System.Drawing.Size(183, 67);
+            this.btnSuaSinhVien.Size = new System.Drawing.Size(214, 67);
             this.btnSuaSinhVien.TabIndex = 2;
             this.btnSuaSinhVien.Text = "Sửa thông tin về sinh viên";
             this.btnSuaSinhVien.UseVisualStyleBackColor = true;
+            this.btnSuaSinhVien.Click += new System.EventHandler(this.btnSuaSinhVien_Click);
             // 
             // btnSuaGV
             // 
-            this.btnSuaGV.Location = new System.Drawing.Point(774, 139);
+            this.btnSuaGV.Location = new System.Drawing.Point(805, 139);
             this.btnSuaGV.Name = "btnSuaGV";
-            this.btnSuaGV.Size = new System.Drawing.Size(203, 67);
+            this.btnSuaGV.Size = new System.Drawing.Size(228, 67);
             this.btnSuaGV.TabIndex = 2;
             this.btnSuaGV.Text = "Sửa thông tin về giảng viên";
             this.btnSuaGV.UseVisualStyleBackColor = true;
@@ -107,11 +108,11 @@
             this.button1.Text = "Thêm thông tin về môn học";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Controller_Admin
+            // Controller_AdminFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 395);
+            this.ClientSize = new System.Drawing.Size(1054, 395);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSuaGV);
             this.Controls.Add(this.btnSuaSinhVien);
@@ -119,7 +120,7 @@
             this.Controls.Add(this.btnThemSVMoi);
             this.Controls.Add(this.btnThemGVMoi);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Name = "Controller_Admin";
+            this.Name = "Controller_AdminFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controller_Admin";
             this.ResumeLayout(false);

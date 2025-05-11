@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -9,6 +10,8 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 
 namespace QuanLySinhVien
 {
@@ -58,6 +61,13 @@ namespace QuanLySinhVien
         {
             this.Hide();
             DangNhapFrm f = new DangNhapFrm();
+            f.ShowDialog();
+        }
+
+        private void btnXemDiemTheoGV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportFrm f = new ReportFrm("Xem điểm bên giảng viên", hoTenNguoiDangNhap);
             f.ShowDialog();
         }
     }

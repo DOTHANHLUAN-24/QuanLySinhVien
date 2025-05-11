@@ -408,7 +408,7 @@
             this.btnThemDuLieu.Name = "btnThemDuLieu";
             this.btnThemDuLieu.Size = new System.Drawing.Size(180, 45);
             this.btnThemDuLieu.TabIndex = 21;
-            this.btnThemDuLieu.Text = "Thêm dữ liệu mới";
+            this.btnThemDuLieu.Text = "Cập nhật dữ liệu";
             this.btnThemDuLieu.Click += new System.EventHandler(this.btnThemDuLieu_Click);
             // 
             // AdminActionFrm

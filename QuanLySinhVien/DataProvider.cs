@@ -11,7 +11,7 @@ using System.Numerics;
 
 namespace QuanLySinhVien
 {
-    public class DataProvider
+    public static class DataProvider
     {
         //Chuỗi kết nối lây bên trong Server Explorer và ấn vào trong phần database kết nối copy phần connection
         const string connectionString =
@@ -24,6 +24,9 @@ namespace QuanLySinhVien
         public static List<Student> infoStudentLogin = new List<Student>();
         public static List<GiangVien> infoGiangVienLogin = new List<GiangVien>();
         public static List<MonHoc> infoMonHoc = new List<MonHoc>();
+        public static List<string> dsMaLop = new List<string>();
+        public static List<string> dsTenSV = new List<string>();
+        public static List<KetQua> dsTheoGV = new List<KetQua>();
 
         public static void OpenConnection()
         {
@@ -303,6 +306,96 @@ namespace QuanLySinhVien
             int soNguyen = r.Next(100, 998);
             string s = randomChar() + "" + randomChar() + soNguyen;
             return s;
+        }
+
+        public static void GetAllMaLop()
+        {
+            try
+            {
+                OpenConnection();
+                string query = "SELECT MaLop FROM LopHoc";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                //Đọc dữ liệu từ database
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string maLop = reader["MaLop"].ToString();
+                    dsMaLop.Add(maLop);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public static void GetAllNameStudent()
+        {
+            try
+            {
+                OpenConnection();
+                string query = "SELECT HoTen FROM SinhVien";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                //Đọc dữ liệu từ database
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string tenSV = reader["HoTen"].ToString();
+                    dsTenSV.Add(tenSV);
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+             finally
+            {
+                CloseConnection();
+            }   
+        }
+
+        public static void LayDiemTheoGV(string HoTenGV)
+        {
+            try
+            {
+                string query = "select * from KetQua kq join MonHoc mh on kq.Nhom = mh.Nhom join SinhVien sv on kq.MaSV = sv.MaSV where mh.HoTenGiangVien = @HoTenGV";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@HoTenGV", HoTenGV);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    KetQua kq = new KetQua();
+
+                    kq.MaSoSV = long.Parse(reader["MaSV"].ToString());
+                    kq.HoTenSV = reader["HoTen"].ToString();
+                    kq.MaMonHoc = reader["MaMH"].ToString();
+                    kq.TenMonHoc = reader["TenMH"].ToString();
+                    kq.MaLop = reader["MaLop"].ToString();
+                    kq.MaKhoa = reader["MaKhoa"].ToString();
+                    kq.TenKhoa = reader["TenKhoa"].ToString();
+                    kq.DiemA = reader["DiemA"].ToString();
+                    kq.DiemB = reader["DiemB"].ToString();
+                    kq.DiemC = reader["DiemC"].ToString();
+                    kq.DiemTB = reader["DiemTB"].ToString();
+                    kq.SoTinChi = int.Parse(reader["SoTinChi"].ToString());
+                    
+                    dsTheoGV.Add(kq);
+                    Debug.WriteLine($"{kq.MaSoSV} {kq.HoTenSV} {kq.MaMonHoc} {kq.TenMonHoc} {kq.MaLop} {kq.MaKhoa} {kq.TenKhoa} {kq.DiemA} {kq.DiemB} {kq.DiemC} {kq.DiemTB}");
+                }
+            } catch( Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } finally            
+            {
+                CloseConnection();
+            }
         }
     }
 }
