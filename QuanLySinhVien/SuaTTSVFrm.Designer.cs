@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuaTTSVFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -242,12 +243,14 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(773, 172);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(284, 54);
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // groupBox1
             // 
@@ -503,9 +506,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SuaTTSVFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SuaTTSVFrm";
+            this.Text = "Sửa thông tin sinh viên";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SuaTTSVFrm_FormClosed);
             this.Load += new System.EventHandler(this.SuaTTSVFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTTSV)).EndInit();
             this.groupBox1.ResumeLayout(false);

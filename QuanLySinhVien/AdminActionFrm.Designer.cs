@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminActionFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,11 +98,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(446, 101);
+            this.label4.Location = new System.Drawing.Point(437, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 17);
+            this.label4.Size = new System.Drawing.Size(178, 17);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Chọn mã môn học cần tìm";
+            this.label4.Text = "Chọn tên môn học cần tìm";
             // 
             // label5
             // 
@@ -236,7 +237,7 @@
             this.btnXemDSSV.Name = "btnXemDSSV";
             this.btnXemDSSV.Size = new System.Drawing.Size(154, 34);
             this.btnXemDSSV.TabIndex = 11;
-            this.btnXemDSSV.Text = "Xem DS Sinh Viên";
+            this.btnXemDSSV.Text = "DS Sinh viên";
             this.btnXemDSSV.UseVisualStyleBackColor = true;
             this.btnXemDSSV.Click += new System.EventHandler(this.btnXemDSSV_Click);
             // 
@@ -247,7 +248,7 @@
             this.btnXemDSSVTheoKhoa.Name = "btnXemDSSVTheoKhoa";
             this.btnXemDSSVTheoKhoa.Size = new System.Drawing.Size(165, 34);
             this.btnXemDSSVTheoKhoa.TabIndex = 12;
-            this.btnXemDSSVTheoKhoa.Text = "Xem DSSV theo Khoa";
+            this.btnXemDSSVTheoKhoa.Text = "DSSV theo Khoa";
             this.btnXemDSSVTheoKhoa.UseVisualStyleBackColor = true;
             this.btnXemDSSVTheoKhoa.Click += new System.EventHandler(this.btnXemDSSVTheoKhoa_Click);
             // 
@@ -447,9 +448,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminActionFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trang hiển thị thông tin môn học";
+            this.Text = "Trang quản trị viên";
             this.Load += new System.EventHandler(this.MainFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMH)).EndInit();
             this.ResumeLayout(false);

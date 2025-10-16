@@ -52,6 +52,7 @@ namespace QuanLySinhVien
             {
                 //Lấy dòng đầu tiên khi nhấn vào
                 var row = dtgvMH.SelectedRows[0];
+                btnLuu.Enabled = true;
 
                 // Truyền giá trị lên các textBox ở trên
                 // Tại vì .Value trả về kiểu object nên phải ép kiểu về string
@@ -252,6 +253,7 @@ namespace QuanLySinhVien
             groupBox2.Enabled = false;
             groupBox3.Enabled = false;
             groupBox4.Enabled = false;
+            btnLuu.Enabled = false;
 
             comboB1.Items.Clear();
             comboB2.Items.Clear();
@@ -265,7 +267,7 @@ namespace QuanLySinhVien
             string selectedItem2 = comboB2.SelectedItem?.ToString();
             string selectedItem3 = comboB3.SelectedItem?.ToString();
             string lichHoc = "";
-            if (Int32.Parse(txtSoTinChi.Text) >= 4 && selectedItem1 != null && selectedItem2 != null && selectedItem3 != null)
+            if (int.Parse(txtSoTinChi.Text) >= 4 && selectedItem1 != null && selectedItem2 != null && selectedItem3 != null)
             {
                 lichHoc = $"{selectedItem1} {selectedItem2} {selectedItem3}";
                 //Debug.WriteLine(lichHoc);
@@ -286,6 +288,19 @@ namespace QuanLySinhVien
             {
                 string query = $@"update MonHoc set ThoiGianHoc = N'{lichHoc}' where MaMH = '{txtMaMH.Text}'";
                 DataProvider.LoadCSDL(query);
+                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                comboB1.Enabled = false;
+                comboB2.Enabled = false;
+                comboB3.Enabled = false;
+                comboB1.Items.Clear();
+                comboB2.Items.Clear();
+                comboB3.Items.Clear();
+                comboB1.SelectedIndex = -1;
+                comboB2.SelectedIndex = -1;
+                comboB3.SelectedIndex = -1;
+                LoadDataMH();
+
+                ResetText(new List<Control> { txtMaMH, txtMaNhom, txtSoTiet, txtSoTinChi, txtHoTenGV, txtMH });
             }
         }
 
@@ -357,6 +372,13 @@ namespace QuanLySinhVien
             }
 
             return itemsToRemove;
+        }
+
+        private void ThemTGMHFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            AdminActionFrm f = new AdminActionFrm();
+            f.ShowDialog();
         }
     }
 }

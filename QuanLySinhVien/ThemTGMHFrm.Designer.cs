@@ -362,6 +362,7 @@
             this.Name = "ThemTGMHFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm thời gian môn học";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ThemTGMHFrm_FormClosed);
             this.Load += new System.EventHandler(this.ThemTGMHFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMH)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -74,5 +74,12 @@ namespace QuanLySinhVien
             comboCapBac.Items.Add("Thạc sĩ");
             comboCapBac.Items.Add("Cử nhân");
         }
+
+        private void ThemMoiGiangVienFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();    
+            AdminActionFrm f = new AdminActionFrm();
+            f.ShowDialog();
+        }
     }
 }

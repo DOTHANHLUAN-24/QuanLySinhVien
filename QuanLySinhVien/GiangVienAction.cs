@@ -66,7 +66,6 @@ namespace QuanLySinhVien
 
         private void btnXemDiemTheoGV_Click(object sender, EventArgs e)
         {
-            this.Hide();
             ReportFrm f = new ReportFrm("Xem điểm bên giảng viên", hoTenNguoiDangNhap);
             f.ShowDialog();
         }

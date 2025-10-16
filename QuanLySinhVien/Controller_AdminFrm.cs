@@ -43,5 +43,17 @@ namespace QuanLySinhVien
             this.Hide();
             f.ShowDialog();
         }
+
+        private void Controller_AdminFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            AdminActionFrm f = new AdminActionFrm();
+            f.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

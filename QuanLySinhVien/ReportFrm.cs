@@ -146,7 +146,7 @@ namespace QuanLySinhVien
                 try
                 {
                     reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLySinhVien.ReportDiemTheoSV.rdlc";
-                    string query1 = $@"select sv.MaSV, sv.HoTen from SinhVien sv where sv.MaSV = {_maSo}";
+                    string query1 = $@"select MaSV, Format(NgaySinh, 'dd/MM/yyyy') AS NgaySinh, Case when GioiTinh = 1 then N'Nam' else N'Nữ' end as GioiTinh, HoTen, DiaChi, DienThoai, MaLop from SinhVien where MaSV = {_maSo}";
                     string query2 = $@"select kq.*, mh.* from KetQua kq join MonHoc mh on kq.MaMH = mh.MaMH where kq.MaSV = {_maSo}";
 
                     var reportDataSource1 = new ReportDataSource()
@@ -232,7 +232,7 @@ namespace QuanLySinhVien
                     string query1 = $@"select * from SinhVien sv join KetQua kq on sv.MaSV = kq.MaSV join MonHoc mh on kq.Nhom = mh.Nhom where mh.HoTenGiangVien = N'{_hoTen}'";
                     string query2 = $@"select * from MonHoc mh where mh.HoTenGiangVien = N'{_hoTen}'";
                     string query3 = $@"select * from KetQua kq join MonHoc mh on kq.Nhom = mh.Nhom where mh.HoTenGiangVien = N'{_hoTen}'";
-
+                    string query4 = $@"select * from GiangVien gv where gv.HoTenGiangVien = N'{_hoTen}'";
                     var reportDataSource1 = new ReportDataSource()
                     {
                         Name = "dbSV",
@@ -251,9 +251,16 @@ namespace QuanLySinhVien
                         Value = DataProvider.LoadCSDL(query3)
                     };
 
+                    var reportDataSource4 = new ReportDataSource()
+                    {
+                        Name = "dbGV",
+                        Value = DataProvider.LoadCSDL(query4)
+                    };
+
                     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
                     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
                     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
 
                 } catch (Exception ex)
                 {

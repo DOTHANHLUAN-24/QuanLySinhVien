@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThoiKhoaBieuSVFrm));
             this.dtgvThoiKhoaBieu = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnHienThiTKB = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThoiKhoaBieu)).BeginInit();
@@ -110,9 +111,10 @@
             this.ClientSize = new System.Drawing.Size(1354, 592);
             this.Controls.Add(this.btnHienThiTKB);
             this.Controls.Add(this.dtgvThoiKhoaBieu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThoiKhoaBieuSVFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThoiKhoaBieuSVFrm";
+            this.Text = "Thời khóa biểu";
             this.Load += new System.EventHandler(this.ThoiKhoaBieuSVFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThoiKhoaBieu)).EndInit();
             this.ResumeLayout(false);

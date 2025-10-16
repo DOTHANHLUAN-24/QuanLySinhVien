@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SinhVienActionFrm));
             this.lblLoiChao = new System.Windows.Forms.Label();
             this.btnXemDiemSV = new System.Windows.Forms.Button();
             this.btnXemMonHocSV = new System.Windows.Forms.Button();
@@ -393,6 +394,7 @@
             this.Controls.Add(this.btnXemMonHocSV);
             this.Controls.Add(this.btnXemDiemSV);
             this.Controls.Add(this.lblLoiChao);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SinhVienActionFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sinh Viên";

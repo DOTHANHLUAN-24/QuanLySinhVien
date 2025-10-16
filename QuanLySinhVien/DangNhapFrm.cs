@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -32,21 +33,31 @@ namespace QuanLySinhVien
             //Lấy dữ liệu của người dùng nhập
             string tenDangNhap = txtTenDangNhap.Text;
             string matKhau = txtMatKhau.Text;
+            errorProvider1.Clear();
 
             bool isFound = false;
             string quyenDangNhap = "";
 
-            foreach (var dn in DataProvider.dsDangNhap)
+            if(tenDangNhap.Trim() == "")
             {
-                if (dn.TaiKhoan == tenDangNhap && dn.MatKhau == matKhau)
-                {
-                    isFound = true;
-                    quyenDangNhap = dn.Quyen;
-                    hoTenNguoiDangNhap = dn.HoTen;
-                    idNguoiDung = dn.MaSo;
-                    break;
-                }
+                errorProvider1.SetError(txtTenDangNhap, "Tên đăng nhập không được để trống");
             }
+            if (matKhau.Length < 6)
+            {
+                errorProvider1.SetError(txtMatKhau, "Mật khẩu phải có ít nhất 6 ký tự");
+            }
+
+                foreach (var dn in DataProvider.dsDangNhap)
+                {
+                    if (dn.TaiKhoan == tenDangNhap && dn.MatKhau == matKhau)
+                    {
+                        isFound = true;
+                        quyenDangNhap = dn.Quyen;
+                        hoTenNguoiDangNhap = dn.HoTen;
+                        idNguoiDung = dn.MaSo;
+                        break;
+                    }
+                }
 
             if (isFound)
             {
@@ -86,6 +97,28 @@ namespace QuanLySinhVien
         {
             //Lấy hết tất cả dữ liệu trong database
             DataProvider.GetAllInfo();
+        }
+
+        private void DangNhapFrm_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void DangNhapFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) { 
+                Debug.WriteLine("Enter pressed");
+                btnDangNhap_Click(sender, e);
+            }
+        }
+
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Debug.WriteLine("Enter pressed");
+                btnDangNhap_Click(sender, e);
+            }
         }
     }
 }

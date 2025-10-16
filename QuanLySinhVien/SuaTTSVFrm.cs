@@ -266,5 +266,20 @@ namespace QuanLySinhVien
             dtgvTTSV.Columns[6].HeaderText = "Mã Khoa";
             dtgvTTSV.Columns[7].HeaderText = "Mã Lớp";
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string query = $@"update SinhVien set HoTen = N'{txtHoTen.Text}', NgaySinh = '{dtpNgaySinh.Value.ToString("yyyy-MM-dd")}', GioiTinh = {(comboGioiTinh.SelectedItem.ToString() == "Nam" ? 1 : 0)}, DiaChi = N'{txtDiaChi.Text}', DienThoai = '{txtDienThoai.Text}', MaKhoa = '{txtMaKhoa.Text}', MaLop = '{txtMaLop.Text}' where MaSV = {txtMaSo.Text}";
+            DataProvider.LoadCSDL(query);
+            MessageBox.Show("Cập nhật thành công");
+            LoadTableMH();
+        }
+
+        private void SuaTTSVFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            Controller_AdminFrm actionAdminFrm = new Controller_AdminFrm();
+            actionAdminFrm.Show();
+        }
     }
 }

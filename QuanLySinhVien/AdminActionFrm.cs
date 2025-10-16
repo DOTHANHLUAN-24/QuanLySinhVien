@@ -291,8 +291,8 @@ namespace QuanLySinhVien
 
         private void btnThemDuLieu_Click(object sender, EventArgs e)
         {
-            Controller_AdminFrm f = new Controller_AdminFrm();
             this.Hide();
+            Controller_AdminFrm f = new Controller_AdminFrm();
             f.ShowDialog();
         }
     }

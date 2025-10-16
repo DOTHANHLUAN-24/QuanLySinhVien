@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfomationInScore));
             this.dtgvHienThiDiem = new System.Windows.Forms.DataGridView();
             this.btnHienThiDiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,9 +100,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHienThiDiem);
             this.Controls.Add(this.dtgvHienThiDiem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfomationInScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin về điểm số";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InfomationInScore_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHienThiDiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

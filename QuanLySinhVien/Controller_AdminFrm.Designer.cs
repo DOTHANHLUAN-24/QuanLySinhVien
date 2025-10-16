@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controller_AdminFrm));
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnThemGVMoi = new System.Windows.Forms.Button();
             this.btnThemSVMoi = new System.Windows.Forms.Button();
             this.btnThemTGMH = new System.Windows.Forms.Button();
             this.btnSuaSinhVien = new System.Windows.Forms.Button();
-            this.btnSuaGV = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -45,7 +44,7 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(1054, 95);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(832, 95);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Trang điều hướng";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,39 +89,21 @@
             this.btnSuaSinhVien.UseVisualStyleBackColor = true;
             this.btnSuaSinhVien.Click += new System.EventHandler(this.btnSuaSinhVien_Click);
             // 
-            // btnSuaGV
-            // 
-            this.btnSuaGV.Location = new System.Drawing.Point(805, 139);
-            this.btnSuaGV.Name = "btnSuaGV";
-            this.btnSuaGV.Size = new System.Drawing.Size(228, 67);
-            this.btnSuaGV.TabIndex = 2;
-            this.btnSuaGV.Text = "Sửa thông tin về giảng viên";
-            this.btnSuaGV.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(22, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(349, 67);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Thêm thông tin về môn học";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Controller_AdminFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 395);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSuaGV);
+            this.ClientSize = new System.Drawing.Size(832, 395);
             this.Controls.Add(this.btnSuaSinhVien);
             this.Controls.Add(this.btnThemTGMH);
             this.Controls.Add(this.btnThemSVMoi);
             this.Controls.Add(this.btnThemGVMoi);
             this.Controls.Add(this.guna2HtmlLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Controller_AdminFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Controller_Admin";
+            this.Text = "Trang điều hướng";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Controller_AdminFrm_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -134,7 +115,5 @@
         private System.Windows.Forms.Button btnThemSVMoi;
         private System.Windows.Forms.Button btnThemTGMH;
         private System.Windows.Forms.Button btnSuaSinhVien;
-        private System.Windows.Forms.Button btnSuaGV;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.47883cm</Width>
+              <Width>3.79645cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.92333cm</Width>
+              <Width>4.24095cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.81762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.07667cm</Width>
+              <Width>3.39429cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -323,9 +323,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetThongTinSinhVien</DataSetName>
         <Top>0.30903cm</Top>
-        <Left>0.4445cm</Left>
+        <Left>4.23799cm</Left>
         <Height>2.308cm</Height>
-        <Width>9.97883cm</Width>
+        <Width>15.24933cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -336,16 +336,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.30433cm</Width>
+              <Width>5.38925cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.47883cm</Width>
+              <Width>4.56375cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.66933cm</Width>
+              <Width>4.75425cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.81233cm</Width>
+              <Width>5.89725cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -652,10 +652,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetThongTinGiangVien</DataSetName>
-        <Top>0.30903cm</Top>
-        <Left>10.42333cm</Left>
+        <Top>3.1877cm</Top>
+        <Left>1.16883cm</Left>
         <Height>2.308cm</Height>
-        <Width>12.26482cm</Width>
+        <Width>20.60449cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
